@@ -1,54 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 main ()
 {
     system("color A");
-    int num,w=0,ab,ab2;
-    double anspow,anspow2,i=1;
+    int num=9,n=2,w=0,i ;
     printf("Please input your number. : ");
     scanf("%d",&num);
-    while(num>=anspow)
-    {
-        anspow=pow(i,2);
-        anspow2=pow(i+1,2);
-    }
-    ab=abs(num-anspow);
-    ab2=abs(num-anspow2);
-    if(ab2>ab)
-    {
-        for()
-    }
-    else
-    {
-        for
-    }
+    for(i =2;i <=num-1;i++)
+        {
+            if(num%i<=0)
+                {
+                    w=5;
+                    break;
+                }
+        }
+    printf("%d is ",num);
+    //check 1or-1 -2 -3 ...
     if(num<2)
         {
-           printf("%d is not prime.\n",num);
+           printf("not prime.\n");
         }
     else
         {
         if(w<1)
             {
-                printf("%d is prime.\n",num);
+                printf("prime.\n");
             }
         else
             {
-                printf("%d is not prime.\n",num);
-                printf("Factors: ");
-                for(i =1;i <=num;i++)
+                printf("not prime.\n");
+            }
+            printf("Factors: ");
+            for(i =1;i <=num;i++)
+            {
+                if(num%i==0)
                 {
-                    if(num%i==0)
+                    printf("%d",i);
+                    if(i<num)
                     {
-                        printf("%d",i);
-                        if(i<num)
-                        {
-                            printf(" ");
-                        }
+                        printf(" ");
                     }
-
                 }
+
             }
         }
 }
