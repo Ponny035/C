@@ -1,10 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+int check (char input);
 main()
 {
     double a,b,c,ans1,ans2,i,g,p,fx=1;
-    int h;
+    int h,checkresult=0;
+    char check_input;
     printf("Input your a : ");
     scanf("%lf",&a);
     printf("Input your b : ");
@@ -38,9 +40,10 @@ main()
         {
             printf("X=Imange Number\n");
             int ans;
-            printf("Do you want to see answer ? \n1)Yes 2)No\nEnter your number : ");
-            scanf("%1d",&ans);
-            if(ans==1)
+            printf("Your Equation is (%.0lf)X^2+(%.0lf)x+(%.0lf) .Is that right? (Y/N) :", a, b, c);
+            scanf(" %c",&check_input);
+            checkresult=check(check_input);
+            if(checkresult==1)
             {
                 /*ans=fabs(b*b-4*a*c);
                 i=fabs(b*b-4*a*c);
@@ -86,7 +89,7 @@ main()
                 ans=0;
                 printf("Do you want to see another type of answer ? 1)Yes 2)No\nEnter your number : ");
                 scanf("%1d",&ans);*/
-                if(ans==1)
+                if(checkresult==1)
                 {
                     i=fabs(b*b-4*a*c);
                     ans1=(-b+sqrt(i))/(2*a);
@@ -95,5 +98,20 @@ main()
                 }
             }
         }
+    }
+}
+int check(char input)
+{
+    if(input=='Y'||input=='y')
+    {
+        return 1;
+    }
+    else if (input=='N'||input=='n')
+    {
+        return 0;
+    }
+    else
+    {
+        return -1;
     }
 }
